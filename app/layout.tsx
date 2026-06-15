@@ -26,10 +26,29 @@ const fraunces = Fraunces({
   style: ["normal"],
 });
 
+// TODO: Update SITE_URL to your real domain before going live
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://medness.co";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "MEDness Co. — Wear Your Calling",
   description:
-    "Niche clothing brand for Filipino medical and allied health students. Represent your course identity.",
+    "Niche clothing brand for Filipino medical and allied health students in Zamboanga City. Represent your course identity.",
+  openGraph: {
+    title: "MEDness Co. — Wear Your Calling",
+    description:
+      "Clothing made for Filipino med and allied health students who are proud of what they're becoming.",
+    url: SITE_URL,
+    siteName: "MEDness Co.",
+    locale: "en_PH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MEDness Co. — Wear Your Calling",
+    description:
+      "Clothing made for Filipino med and allied health students who are proud of what they're becoming.",
+  },
 };
 
 export default function RootLayout({
